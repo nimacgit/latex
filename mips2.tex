@@ -1,0 +1,113 @@
+\documentclass[a4paper]{article}
+
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{blindtext}
+\usepackage{listings}
+
+
+\usepackage{xepersian}
+\settextfont{B Roya}
+\setlatintextfont{Tahoma}
+\setlatintextfont{Tahoma}
+
+
+
+\title{ تمرین اصول طراحی کامپیوتر}
+\author{نیما بهرنگ 96100114}
+\date{\today}
+
+\begin{document}
+\maketitle
+\centering{استاد پارسا}
+
+\begin{enumerate}
+\item{تمرین}
+\begin{enumerate}
+\item{سوال 2.10}
+\\
+\begin{latin}
+\begin{flushleft}
+\lr{t0 = a + 4;}\\
+\lr{t1 = a + 0;}\\
+\lr{a[1] = t1;}\\
+\lr{t0 = a[1];}\\
+\lr{f = t1 + t0;}\\
+\end{flushleft}
+\end{latin}
+
+\item{سوال 2.12.6}
+  بله چون جمع 8 و
+\lr{D}
+بیشتر از 16 می شود
+از اندازه بیشتر می شود و 
+\lr{overflow} 
+می شود
+\end{enumerate}
+\item{سوال 2.17}
+\begin{latin}
+type = I-type\\
+instruction = load word : lw\\
+lw \$v0, 4(\$at)
+\end{latin}
+توضیح:\\
+\begin{latin}
+rs = 1 => \$at\\
+rt = 2 => \$v0\\
+constant = 0x4 => 4\\
+\end{latin}
+
+نمایش باینری : \\
+\begin{flushleft}
+\lr{op : 100011}\\
+\lr{rs : 00001}\\
+\lr{rt : 00010}\\
+\lr{constant : 0000000000000100}
+\end{flushleft}
+
+\item{سوال 2.21}
+
+به سادگی با دستور
+\lr{nor}
+قابل پیاده سازیست
+
+\setLR
+\lr{nor \$t1, \$t2, \$zero}
+\setRL
+
+\item{سوال 2.23}\\
+دستور
+\lr{slt}:
+اگر رجیستر دوم از سوم کمتر باشد رجیستر اول را یک می گذارد.پس مقدار 
+\lr{\$t2}
+یک می شود و دستور دوم صدق می کند زیرا با صفر برابر نیست.پس به 
+\lr{else}
+می رود و مقدارش دوتا اضافه می شود.پس 
+\lr{\$t2}
+برابر 3 می شود	
+
+\item{سوال 2.38}\\
+
+نمایش 4 بایت خانه ای که 
+\lr{\$t1}
+به آن اشاره می کند به صورت زیر است//
+\lr{11 | 22 | 33 | 44}\\
+و دستور
+\lr{lbu}
+مقدار 11 را در
+\lr{\$t0}
+ذخیره کرده و دستوری بعد مقدار آن را به خانه ای که
+\lr{\$t2}
+اشاره می کند می ریزد
+پس مقدار خانه ای که 
+\lr{\$t2}
+اشاره می کند برابر
+\lr{0x00000011}
+است
+
+\end{enumerate}
+\end{document}
+
+
