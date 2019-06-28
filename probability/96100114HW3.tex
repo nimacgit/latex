@@ -1,0 +1,214 @@
+\documentclass[a4paper]{article}
+
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{blindtext}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning,arrows}
+
+
+
+\usepackage{xepersian}
+\settextfont{B Roya}
+\setlatintextfont{Tahoma}
+
+\title{تمرین سوم احتمال}
+\author{نیما بهرنگ 96100114}
+\date{\today}	
+\begin{document}
+\maketitle
+\centering{استاد خزایی}
+
+\section*{پرسش ۱}
+طبق قانون احتمال کل عمل می کنیم
+\begin{enumerate}
+\begin{latin}
+\item{}
+$ p_X =\Sigma_y p_{X,Y}(x,y)$
+\[
+  p_X=\begin{cases}
+               0.4 & 1\\
+               0.1 & 2\\
+0  & 3\\
+0.1 & 4\\
+0.4 & 5				
+            \end{cases}
+\]
+\[
+  p_Y=\begin{cases}
+               0.1 & 1\\
+               0.3 & 2\\
+0.2  & 3\\
+0.4 & 4
+            \end{cases}
+\]
+\item{}
+They are independent as $ \forall x,y:  p_{X,Y}(x,y) = p_X(x)\times p_Y(y)$\\
+\item{}
+$E[W] = \Sigma w.P_W(w)$\\
+$E[X|Y=y]=\Sigma x.p_{X|Y}(x|y)=\Sigma x.\dfrac{p_{X,Y}(x,y)}{p_Y(y)}$\\
+\[
+  E[X|Y=y] =\begin{cases}
+& 1\\
+& 2\\
+0  & 3\\
+0.1 & 4\\
+0.4 & 5				
+            \end{cases}
+\]
+
+
+\end{latin}
+\end{enumerate}
+\pagebreak
+\section*{پرسش ۲}
+\begin{latin}
+Probability of a color appear in our event: 1 - it doesn't appear = $1 - \dfrac{(^{60}_{20})}{(^{70}_{20})}$\\
+introduce $Y_i$ a new indicator that show if color i exists in our outcome.\\
+$X=\Sigma Y_i$ and all of them are equal.We have seven color so the expected value of number of colors according to the linearity of expectation is $7\times (1 - \dfrac{(^{60}_{20})}{(^{70}_{20})})$
+
+\end{latin}
+\pagebreak
+\section*{پرسش ۳}
+\begin{latin}
+Memory less: $P_x(X>m+n | X>m) = P_x(X>n)$\\
+Conditional: $P(a|b) = \dfrac{P(ab)}{P(b)}$\\
+If its geometric($P_x(X=k)=(1-p)^{k-1}p$) $ \Rightarrow $\\
+$P_x(X>m+n|X>n) = \dfrac{P_x(X>m+n)}{P_x(X>n)} =$
+$\dfrac{(1-p)^{n+m}}{(1-p)^n} = (1-p)^m = P_x(X>m)$\\
+
+If we have a Memory-less so $P_x(X=k) = P_x(X>k) - P_x(X>k+1)=$\\
+$= P_x(X>k) - P_x(X>k+1|X>1)\times P_x(X>1) = $\\
+$= P_x(X>k) - P_x(X>k)\times P_x(X>1) = (1-P_x(X>1)) \times P_x(X>k)$\\
+now we calculate the ratio of sequence:$\dfrac{P_x(X=k+1)}{P_x(X=k)} = \dfrac{P_x(X>k)}{P_x(X>k+1)}=\dfrac{P_x(X>k)}{P_x(X>k+1|X>1)\times P_x(X>1)} =$\\
+$=\dfrac{P_x(X>k)}{P_x(X>k)\times P_x(X>1)} = Constant = \dfrac{1}{P_x(X>1)}$\\ 
+So its exactly the definition of a geometric RV.
+
+
+\end{latin}
+\pagebreak
+
+\section*{پرسش ۴}
+\begin{latin}
+$ fact1: by definition:  \Sigma_k \dfrac{(_{k}^{D})(_{(n)-(x)}^{(N)-(D)})}{(_{(n)}^{(N)})} = 1$\\
+$ fact2: (_n^m) = \dfrac{m.(m-1)}{n.(n-1)} (_{n-2}^{m-2})$\\
+we know that expected of a hypergeometric RV  is $ \dfrac{nD}{N} $\\
+$Var(X) = E[(X-E[X])^2] = E[X^2] - E[X]^2 = E[X(X-1) + X] - E[X]^2 = E[X(X-1)] + E[X] - E[X]^2 $\\
+$E[X(X-1)] = \Sigma x(x-1)P(X=x) = \Sigma x(x-1) \dfrac{(_x^D)(_{n-x}^{N-D})}{(_n^N)} = $\\
+$ \Sigma_x D.(D-1) \dfrac{(_{x-2}^{D-2})(_{(n-2)-(x-2)}^{(N-2)-(D-2)})}{\dfrac{N(N-1)}{n(n-1)}\times (_{(n-2)}^{(N-2)})} = \dfrac{D(D-1).n(n-1)}{N(N-1)}$\\
+$Var(X) = \dfrac{D(D-1).n(n-1)}{N(N-1)} + \dfrac{nD}{N} - (\dfrac{nD}{N})^2 = n\dfrac{D}{N}(1-\dfrac{D}{N})(1-\dfrac{n-1}{N-1})$
+
+\end{latin}
+\pagebreak
+
+\section*{پرسش ۵}
+\begin{latin}
+we can make a new indicator like $Y_i$ which show card 
+\end{latin}
+
+\pagebreak
+
+\section*{پرسش ۶}
+\pagebreak
+
+\section*{پرسش ۷}
+برای اینکه آقای خسته به جایگاه برود لازم است که هر ۹ تا ماشین جلوی او رفته باشند و بعد از تعدادی ماشین، او انتخاب شود.
+\begin{latin}
+$\forall k>=10: P_x(k) = ( (_9^{k-1})\dfrac{1}{3}^{10}) \times (\dfrac{1}{3}^{k-10}\times 2^{k-10})$\\
+$E[X] = \Sigma^{\infty}_{k=10} k.P_x(k)$
+\end{latin}
+\pagebreak
+\section*{پرسش۸}
+\begin{latin}
+$E[X] = \Sigma^{\infty}_{k=1}\dfrac{i}{2^i} = \Sigma^{\infty}_{k=1}\dfrac{1}{2^i} + \Sigma^{\infty}_{k=2}\dfrac{1}{2^i} +\Sigma^{\infty}_{k=3}\dfrac{1}{2^i} + ...$\\
+$= \dfrac{1}{1} + \dfrac{1}{2} + \dfrac{1}{4} + ... = 2$
+\end{latin}
+
+\pagebreak
+\section*{پرسش۹}
+\begin{latin}
+\begin{enumerate}
+\item{}
+\end{enumerate}
+\end{latin}
+
+\pagebreak
+\section*{پرسش۱۰}
+\begin{latin}
+\begin{enumerate}
+\item{}
+correct \\
+$ A \searrow B => P(A|B) \leq P(A) => \dfrac{P(AB)}{P(B)} \leq P(A) => \dfrac{P(AB)}{P(A)} \leq P(B) => P(B|A) \leq P(B) => B \searrow A $
+\item{}
+incorrect\\
+$ A = C = {1,2,3}, B = {1,4}$\\
+$ P(A) = \dfrac{3}{4} \geq P(A|B) = \dfrac{1}{2}  $\\
+$ P(B) = \dfrac{2}{4} \geq P(B|C) = \dfrac{1}{3}  $\\
+$ P(C) = \dfrac{3}{4} \leq P(C|A) = \dfrac{1}{1}  $\\
+\item{}
+incorrect\\
+$ A = {1,2,3},  C = {3,4,5}, B = {3,6,7,8,9}$\\
+$ P(A) = \dfrac{3}{9} \geq P(A|B) = \dfrac{1}{5}  $\\
+$ P(C) = \dfrac{3}{9} \geq P(C|B) = \dfrac{1}{5}  $\\
+$ P(AC) = \dfrac{1}{9} \leq P(C|A) = \dfrac{1}{5}  $\\
+
+\end{enumerate}
+\end{latin}
+
+\pagebreak
+\section*{پرسش۱۱}
+\begin{latin}
+k: initial money\\
+bankruptcy: when our money get 0\\
+$A_k:$ probability of getting bankrupt when we have k money\\
+$ P(A_k) = P(A_k|win)P(win) + P(A_k|loose)P(loose)$\\
+$P(A_k) = P(A_{k+1})p + P(A_{k-1})(1-p)$\\
+we can solve it with discrete math method as an second degree equation\\
+$x = p.x^2 + (1-p) => x = \dfrac{1 \pm \sqrt{1 - 4p(1-p)}}{2p}$\\
+$x = \dfrac{1 \pm |2p-1|}{2p}: p \leq \dfrac{1}{2} => x = \dfrac{1 - (1-2p)}{2p} = 1:$ always bankrupt\\
+$p > \dfrac{1}{2} => x = \dfrac{1 - (2p-1)}{2p} = \dfrac{1-p}{p} => x_k = (\dfrac{1-p}{p})^k$
+\end{latin}
+
+\pagebreak
+\section*{پرسش۱۲}
+\begin{enumerate}
+\item{}
+با استقرا حدس خود را ثابت می کنیم
+\begin{latin}
+$\dfrac{g}{r+b+g}$\\
+for one ball it's obvious.\\
+for more than one ball we use induction on total number of balls.\\
+$A_r: $ first ball be red
+$A_g: $ first ball be green
+$A_b: $ first ball be blue
+$G: $ last balls be green
+$P(G) = P(G|A_r)P(A_r) + P(G|A_g)P(A_g) + P(G|A_b)P(A_b)$\\
+we can calculate $P(G|A_k) $ with the induction we use as the total number of balls reduced by one.\\
+$P(G) = \dfrac{g}{g+r+b-1} \times \dfrac{r}{r+g+b} +  \dfrac{g-1}{g+r+b-1} \times \dfrac{g}{r+g+b} +  \dfrac{g}{g+r+b-1} \times \dfrac{b}{r+g+b} = \dfrac{g}{r+g+b}$\\
+so its always same.
+
+\end{latin}
+\item{}
+همانند مثال قبل از استقرا استفاده می کنیم
+\begin{latin}
+$\dfrac{r}{r+b+g}$\\
+for one ball it's obvious.\\
+for more than one ball we use induction on total number of balls.\\
+$A_r: $ first ball be red
+$A_g: $ first ball be green
+$A_b: $ first ball be blue
+$R: $ red balls finished first
+$P(R) = P(R|A_r)P(A_r) + P(R|A_g)P(A_g) + P(R|A_b)P(A_b)$\\
+we can calculate $P(R|A_k) $ with the induction we use as the total number of balls reduced by one.\\
+$P(R) = \dfrac{r-1}{g+r+b-1} \times \dfrac{r}{r+g+b} +  \dfrac{r}{g+r+b-1} \times \dfrac{g}{r+g+b} +  \dfrac{r}{g+r+b-1} \times \dfrac{b}{r+g+b} = \dfrac{r}{r+g+b}$\\
+so its always same.
+
+\end{latin}
+
+\end{enumerate}
+\pagebreak
+\end{document}

@@ -1,0 +1,224 @@
+\documentclass[a4paper]{article}
+
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{blindtext}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning,arrows}
+
+
+
+\usepackage{xepersian}
+\settextfont{B Roya}
+\setlatintextfont{Tahoma}
+
+\title{تمرین اول احتمال}
+\author{نیما بهرنگ 96100114}
+\date{\today}	
+\begin{document}
+\maketitle
+\centering{استاد خزایی}
+
+
+\section*{پرسش ۱}
+\begin{enumerate}
+\begin{latin}
+\item{}
+*$Cov(X,Y) = E[XY]-E[X]E[Y]$\\
+*$E[E[Y|X]]=E[Y]$\\
+*$E[E[XY|X]]=E[XY]$\\
+so\\
+$ Cov(X,E[Y|X]) = E[X E[Y|X]] - E[X]E[E[Y|X]]= $\\
+$ =E[E[XY|X]]-E[X]E[Y] = E[E[XY|X]] -E[X]E[Y]=$\\
+$=E[XY]-E[X]E[Y] = Cov(X,Y)$
+
+\item{}
+* $Cov(X+Z,Y) = Cov(X,Y) + Cov(Z,Y)$\\
+proof:\\
+E is linear \\
+$Cov(X+Z,Y) = E[(X+Y-E[X]-E[Y])(Z-E[Z])]=$\\
+$= E[(X - E[X])(Z-E[Z]) + (Y-E[Y])(Z-E[Z])] = $\\
+$= E[(X-E[X])(Z-E[Z])] + E[(Y-E[Y])(Z-E[Z])] = Cov(X,Z)+Cov(Y,Z)$\\
+* $Cov(X,X) =Var(X)$\\
+*$ Cov(X,Y)=Cov(Y,X)$\\
+so\\
+lets think that both X,Y have distribution like Z\\
+$ Cov(X+Y,X-Y) = Cov(X,X)+Cov(Y,X)-Cov(Y,Y)-Cov(X,Y) = $\\
+$Var(X) - Var(Y) = Var(Z) - Var(Z) = 0$
+\end{latin}
+\end{enumerate}
+\pagebreak
+\section*{پرسش ۲}
+\begin{latin}
+\begin{enumerate}
+
+\item{}
+* $\int x^k dx = \dfrac{x^{k+1}}{k+1} => \int_0^1 x^k dx = \dfrac{1}{k+1}$\\
+$\int _0^1 G(s)ds = \int_0^1 E(s^X)ds = \int \int_0^1 f(x) s^x ds dx = $\\
+$  \int f(x)\dfrac{1}{x+1}dx = E[\dfrac{1}{1+x}]$\\
+\item{}
+* $M_X(t) = E[e^{tX}] = e^{t\mu + \dfrac{(t\sigma)^2}{2}}$\\
+so\\
+$ Y = log(X) => E[X]=E[e^Y]=M_1(Y) = e^{\mu + \dfrac{\sigma^2}{2}}$\\
+$var(X) = E[X^2]-E[X]^2 $\\
+$E[X^2] = E[e^{2Y}] = M_2(Y) = e^{2\mu + \dfrac{4\sigma^2}{2}} $\\
+$var(X) = e^{2\mu + \dfrac{4\sigma^2}{2}} - (e^{\mu + \dfrac{\sigma^2}{2}})^2$\\
+\end{enumerate}
+\end{latin}
+\pagebreak
+\section*{پرسش ۳}
+\begin{latin}
+*$e^x= \Sigma \dfrac{x^n}{n!}$\\
+* $M_X^{(k)}(0)=E[X^k]$\\
+*$M_X$ for normal standard is: $e^{\dfrac{t^2}{2}}$\\
+we use its moment generative function\\
+
+$e^{\dfrac{t^2}{2}}= \Sigma_{n=0} \dfrac{{t^2}^n}{2^n n!}$\\
+so we derive it k times:\\
+$e^{\dfrac{t^2}{2}^{(k)}}= \Sigma_{n\geq \dfrac{k}{2}} \dfrac{2n\times (2n-1) ... \times (2n-k+1) t^{2n-k}}{2^n n!}$\\
+as we can see if k is 2j+1 and t=0 then all the elements are equal to zero but if its 2j then the first one is $t^{2n-2j}$ and for t=0,n=$\dfrac{k}{2}$=j its equal to one so its coefficient is 
+the sum of whole sigma which is equal to:\\
+$\dfrac{2j \times (2j-1) ... \times 1}{2^{2j} (2j)!} = \dfrac{(2j)!}{2^{2j} (2j)!}$
+\end{latin}
+\pagebreak
+
+\section*{پرسش ۴}
+\begin{latin}
+$X_i$ if toss number i is head\\
+$M_n = \dfrac{X_1 + ... + X_n}{n}$\\
+$Var(M_n) = \dfrac{\sigma_X^2}{n}$\\
+$ P{|M_n - f|>0.1} \leq 0.1 $\\
+by Chebyshev we have: $P(|M_n - f|> \epsilon) \leq \dfrac{\sigma_M^2}{\epsilon^2} =>$\\
+$ P(|M_n - f|>0.1) \leq  \dfrac{\sigma_M^2}{0.01} \leq 0.1 =>$\\ 
+$ \sigma_M^2 \leq 0.001 => \dfrac{p.(1-p)}{n} \leq 0.001 => n \geq 250$
+\end{latin}
+\pagebreak
+
+\section*{پرسش ۵}
+\begin{latin}
+\begin{enumerate}
+\item{}
+as it says: $P(lim X_n = c)=1$\\
+if we want to say that it also converge in probability, we have to show that: $\forall \epsilon > 0: lim P(|X_n - c|>\epsilon)=0$\\
+if we show $lim P(|X_n - c|=0) = 1$ so we have prove the above theorem.\\
+by the definition: $P(lim X_n = c) = 1 => lim P(X_n = c) = 1 => lim P(X_n - c = 0) = 1=> lim P(|X_n - c| = 0) = 1$\\
+
+\item{}
+we use central limit theorem and try to use standard normal RV to get the answer\\
+as $X_i $are independent and identical with $\mu = 0, \sigma^2=\dfrac{1}{12}$\\
+$S_n = \Sigma X_i => P(S_n \leq 5 )=\Phi(\dfrac{5-n\mu}{\sigma \sqrt{n}}), n =100= \Phi(\sqrt{3}) = 0.9584$\\
+so the answer is $ 1-\Phi(1.732) \approx = 0.0416$\\
+we have this formula in book and as the result of similarity of sum of n number of random variable to normal distribution\\
+\end{enumerate}
+\end{latin}
+
+\pagebreak
+
+\section*{پرسش ۶}
+\pagebreak
+\begin{latin}
+\begin{enumerate}
+\item{}
+
+\item{}
+as the CDF of exponential is $1-e^{-\lambda x}$ for positive x\\
+$P\{X <= k\} = 1 - e^{-k\lambda}$\\
+$W = min(X,Y) => F_W(w) = 1-P(X>w,Y>w)=$\\
+$1-P\{X>w\}P\{Y>w\} =1-(1-F_X(w))(1-F_Y(w))=1-e^{-2w\lambda} =>  $\\
+$ f_W(w)= F' = 2\lambda e^{-2w\lambda}$\\
+so its just like a exponential with parameter $2\lambda$\\
+$E[W] = \dfrac{1}{2\lambda}$\\
+now for second one
+$P\{X <= k\} = 1 - e^{-k\lambda}$\\
+$W = min(2X,Y) => F_W(w) = 1-P(X>\dfrac{w}{2},Y>w)=$\\
+$1-P\{X>w\}P\{Y>w\} =1-(1-F_X(w))(1-F_Y(w))=1-e^{-\dfrac{3}{2} w\lambda} =>  $\\
+$ f_W(w)= F' = \dfrac{3}{2}\lambda e^{-\dfrac{3}{2} w\lambda}$\\
+so its just like a exponential with parameter $\dfrac{3}{2}\lambda$\\
+$E[W] = \dfrac{2}{3\lambda}$\\
+\end{enumerate}
+\end{latin}
+\section*{پرسش ۷}
+\begin{latin}
+\begin{enumerate}
+\item{}
+$E[|X-Y|] = \int \int_{x>y} x-y dxdy +\int \int_{y>x} y-x dxdy = 2\int \int_{x>y} x-y dxdy $\\
+$2\int_0^\alpha (\int_y^\alpha xdx - y\int^\alpha_y dx)dy= 2\int_0^\alpha (\dfrac{\alpha^2}{2} - \dfrac{y^2}{2} - y\alpha + y^2)dy = $\\
+$2 (\dfrac{\alpha^3}{2}-\dfrac{\alpha^3}{6} - \dfrac{\alpha^3}{2} + \dfrac{\alpha^3}{3})= \dfrac{\alpha^3}{3}$\\
+
+\item{}
+$max(a,b) - min(a,b) = |a-b|$\\
+directly from last part we get $\dfrac{1}{3}$\\
+
+$max(a,b) + min(a,b) = a+b$\\
+so its the PMF of sum of two uniform and we use the convolution on them:
+$f_{X+Y}(Z)=\int f_X(z-y)f_Y(y)dy$\\
+as we solve it before, there is two case: 0<z<1, 1<z<2\\
+its only important when $f_Y(y)=1$ other place its 0, so:
+$0\leq z<1: \int_0^1 f_X(z-y)dy = \int_0^z dy = z$\\
+$1\leq z\leq 2: \int_0^1 f_X(z-y)dy = \int_{z-1}^1 dy = 2-z$\\
+$f_{X+Y}(z) = z : 0\leq z<1, f_{X+Y}(z)=2-z: 1\leq z\leq 2$
+
+\end{enumerate}
+\end{latin}
+\pagebreak
+\section*{پرسش۸}
+\begin{latin}
+for any two $X_i$ we know the probability of $X_i > X_j$ as they are iid, it means it must be $\dfrac{1}{2}$\\
+$ P(X_i > X_{i-1}, X_i > X_{i-2},... X_i > X_1) = P(X_i>X_{i-1})\times ... \times P(X_i > X_1) = \dfrac{1}{2^i}$\\
+so $Y_i:$ person i do record \\ $E[\Sigma Y_i] = \Sigma E[Y_i]= 1 + \dfrac{1}{2} + ... = 2$\\
+$E[Y_i^2] = 1^2\times P(record) + 0^2\times(1-P(record)) = E[Y_i]$\\
+$Y_i$ are independent so $var(\Sigma Y_i) = \Sigma var(Y_i) = \Sigma E[Y^2] - E[Y]^2 = \Sigma_{i=1} \dfrac{1}{2^{i-1}} - \dfrac{1}{2^i} = 1 - \dfrac{1}{2^n}$
+\end{latin}
+
+\pagebreak
+\section*{پرسش۹}
+\begin{latin}
+
+\end{latin}
+
+\pagebreak
+\section*{پرسش۱۰}
+\begin{latin}
+\begin{enumerate}
+\item{}
+* $E[Cos(\theta)] = 0$ as it is odd between 0 and $2\pi$
+so $f_\theta(a) = \dfrac{1}{2\pi}$\\
+
+$Cov(Sin(\theta), Cos(\theta)) = E[Sin(\theta)Cos(\theta)] - E[Sin(\theta)]E[Cos(\theta)] = E[Sin(\theta)Cos(\theta)] = \int_0^{2\pi}cos(x)sin(x)\dfrac{1}{2\pi}dx=$\\
+$ \dfrac{1}{2\pi}\int \dfrac{1}{2}sin(2x)= \dfrac{-1}{8\pi}cos(2x) from(0,2\pi) = 0 => uncorrelated$\\
+\item{}
+* $var(X+Y) = var(X)+var(Y) - 2cov(X,Y)$\\
+$\rho(X+Y,X-Y) = \dfrac{cov(X+Y,X-Y)}{\sigma_{X+Y}\sigma_{X-Y}}=\dfrac{var(X) - var(Y)}{\sigma_{X+Y}\sigma_{X-Y}}=$\\
+$\dfrac{var(X) - var(Y)}{\sqrt{var(X+Y)var(X-Y)}}=\dfrac{var(X) - var(Y)}{\sqrt{var(X)^2 + var(Y)^2 + 2var(x)var(y)}} = \dfrac{var(X) - var(Y)}{\sqrt{(var(X)+var(y))^2}} = \dfrac{var(X) - var(Y)}{var(X) + var(Y)}$\\
+\end{enumerate}
+\end{latin}
+
+\pagebreak
+\section*{پرسش۱۱}
+\begin{latin}
+\begin{enumerate}
+
+\item{}
+$f_X(x) = \int f(x,y)dy = \int \dfrac{1}{2\pi \sigma_x \sigma_y \sqrt{1-\rho^2}}e^{-z}dy$\\
+$ z=\dfrac{1}{2(1-\rho^2)}\times[(\dfrac{x-\mu_x}{\sigma_x}^2)-(\dfrac{2\rho(x-\mu_x)(y-\mu_y)}{\sigma_x \sigma_y})+(\dfrac{y-\mu_y}{\sigma_y}^2)] $\\
+we can prove that it integral is  equal to:\\
+$ \dfrac{1}{\sqrt{2\pi}\sigma_x}e^{-\dfrac{(x-\mu_x)^2}{2\sigma_x^2}}$\\
+which is exactly the normal distribution with mean $\mu_x$ and variance $\sigma_x^2$\\
+same for y we have:\\
+$f_Y(y) = \int \dfrac{1}{2\pi \sigma_x \sigma_y \sqrt{1-\rho^2}}e^{-z}dx = \dfrac{1}{\sqrt{2\pi}\sigma_y}e^{-\dfrac{(y-\mu_y)^2}{2\sigma_y^2}}$\\
+
+prove:
+
+\item{}
+
+\end{enumerate}
+\end{latin}
+
+\pagebreak
+\section*{پرسش۱۲}
+
+\pagebreak
+\end{document}

@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2018.10.12)  18 OCT 2018 20:04
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2018.10.12)  27 JAN 2019 01:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**mips2.tex
-(./mips2.tex
+**HWds3.tex
+(./HWds3.tex
 LaTeX2e <2018-04-01> patch level 2
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
@@ -979,37 +979,39 @@ lmroman10-bolditalic},ItalicFont={lmroman10-italic},SmallCapsFont={lmromancaps1
 . <->"Tahoma/BI/OT:script=latn;language=DFLT;mapping=tex-text;"
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
 .................................................
-LaTeX Info: Redefining \latinfont on input line 13.
 LaTeX Info: Redefining \latinfont on input line 14.
-(./mips2.aux)
-\openout1 = `mips2.aux'.
+(./HWds3.aux)
+\openout1 = `HWds3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 \c@lstlisting=\count336
 \AtBeginShipoutBox=\box46
- [1
+ (c:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+[1
 
-] [2] (./mips2.aux) ) 
+] [2] [3] [4] [5] [6] (./HWds3.aux) ) 
 Here is how much of TeX's memory you used:
- 15409 strings out of 492970
- 323891 string characters out of 6137297
- 445209 words of memory out of 5000000
- 19238 multiletter control sequences out of 15000+600000
- 533834 words of font info for 53 fonts, out of 8000000 for 9000
+ 15438 strings out of 492970
+ 324519 string characters out of 6137297
+ 443209 words of memory out of 5000000
+ 19260 multiletter control sequences out of 15000+600000
+ 533858 words of font info for 56 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 60i,8n,67p,10446b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,8n,72p,10446b,258s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on mips2.pdf (2 pages).
+Output written on HWds3.pdf (6 pages).
